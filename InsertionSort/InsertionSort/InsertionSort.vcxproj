@@ -110,11 +110,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="node.h" />
     <ClInclude Include="sortInsertion.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="assignment06.cpp" />
     <ClCompile Include="week06.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="makefile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="words.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
