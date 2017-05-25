@@ -61,7 +61,7 @@ void sortInsertion(T array[], int num)
       ++i;
    }
 
-   //freeData(sorted);
+   freeData(sorted);
 }
 
 #endif // INSERTION_SORT_H
