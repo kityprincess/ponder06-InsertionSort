@@ -60,6 +60,8 @@ void sortInsertion(T array[], int num)
       array[i] = p->data;
       ++i;
    }
+
+   //freeData(sorted);
 }
 
 #endif // INSERTION_SORT_H
