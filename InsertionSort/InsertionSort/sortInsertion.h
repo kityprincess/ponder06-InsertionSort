@@ -20,6 +20,48 @@
 template <class T>
 void sortInsertion(T array[], int num)
 {
+   // Start by handling easy cases an empty array
+   // or an array with only one item
+   if (num <= 1)
+      return;
+
+   // Now, we create our sorted structure
+   Node<T> * sorted = new Node<T>(array[0]);
+
+   // Next, we loop through the items find where they belong
+   // and put them there; we start at 1 because we've already
+   // put item 0 in our sorted structure
+   for (int j = 1; j < num; ++j)
+   {
+      T itm = array[j];
+
+      if (itm < sorted->data)
+      {
+         insert(itm, sorted, true);
+         continue;
+      }
+
+      Node<T> * prev = sorted;
+      Node<T> * cur = prev->pNext;
+
+      while (cur && cur->data <= itm)
+      {
+         prev = cur;
+         cur = prev->pNext;
+      }
+      
+      insert(itm, prev);
+   }
+
+   // And then we copy our data back into the array
+   int i = 0;
+   for (Node<T> * p = sorted; p; p = p->pNext)
+   {
+      array[i] = p->data;
+      ++i;
+   }
+
+   freeData(sorted);
 }
 
 #endif // INSERTION_SORT_H
