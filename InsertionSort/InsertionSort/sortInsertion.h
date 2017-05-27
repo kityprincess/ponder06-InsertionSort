@@ -33,24 +33,22 @@ void sortInsertion(T array[], int num)
    // put item 0 in our sorted structure
    for (int j = 1; j < num; ++j)
    {
-      T itm = array[j];
-
-      if (itm < sorted->data)
+      if (array[j] < sorted->data)
       {
-         insert(itm, sorted, true);
+         insert(array[j], sorted, true);
          continue;
       }
 
       Node<T> * prev = sorted;
       Node<T> * cur = prev->pNext;
 
-      while (cur && cur->data <= itm)
+      while (cur && cur->data <= array[j])
       {
          prev = cur;
          cur = prev->pNext;
       }
       
-      insert(itm, prev);
+      insert(array[j], prev);
    }
 
    // And then we copy our data back into the array
